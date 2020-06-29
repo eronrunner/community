@@ -7,8 +7,6 @@ class UserManager(Manager):
 
   def create(self, linked_id: str):
     coll = get_collection(self.COLLECTION)
-    users = coll.find({})
-    print(list(users) if users else users)
     user =  coll.find_one({"_user_linked_id": linked_id})
     if user:
       raise Exception(f"${linked_id} is exist")
