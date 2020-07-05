@@ -7,7 +7,7 @@ from utils import gen_uuid
 
 if __name__ == '__main__':
   import mongo_connection
-  author = User.objects.get(_user_linked_id="nphatdat@gmail.com")
+  author = get(_user_linked_id="nphatdat@gmail.com")
   print(author)
   manager = PostManager()
   n_post = manager.create(title="TTTTT", author_id=author, content="json content", content_type="json")

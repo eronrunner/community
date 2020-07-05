@@ -8,10 +8,14 @@ import pathlib
 _ROOT = str(pathlib.Path(__file__).parent)
 _ROOT_RESOURCES = "resources"
 _CREDENTIALS = "credentials"
+_DRIVE_FOLDER = "drive_folder"
 
 def get_resource(*path):
   return "/".join(path)
 
 def get_credentials(file_name):
   return "/".join([_ROOT, _ROOT_RESOURCES, _CREDENTIALS, file_name])
+
+def get_drive(file_name):
+  return "/".join([_ROOT, _ROOT_RESOURCES, _DRIVE_FOLDER, file_name])
 
