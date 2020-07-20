@@ -1,10 +1,10 @@
 from flask import Flask
-app = Flask(__name__)
 
+import FlaskApp
 
-@app.route('/')
-def index():
-    return "Hello World!"
+APP = Flask("FlaskApp", instance_relative_config=True)
+
+APP.config.from_object(FlaskApp.APP_SETTINGS)
 
 if __name__ == '__main__':
-    app.run()
+    APP.run()

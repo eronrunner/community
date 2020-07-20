@@ -1,27 +1,24 @@
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
-
+import FlaskApp
 
 class Config(object):
     DEBUG = False
     TESTING = False
-    CSRF_ENABLED = True
-    SECRET_KEY = 'this-really-needs-to-be-changed'
-
+    CSRF_ENABLED = False
+    SECRET_KEY = 'secret'
+    # To use SQL DB, SQLAlchemy_DATABASE_URI = os.eviron['DATABASE_URI']
 
 class ProductionConfig(Config):
     DEBUG = False
 
-
-class StagingConfig(Config):
-    DEVELOPMENT = True
+class StageConfig(Config):
     DEBUG = True
-
+    TESTING = True
 
 class DevelopmentConfig(Config):
-    DEVELOPMENT = True
     DEBUG = True
-
+    SERVER_NAME = FlaskApp.DEV_SERVER_NAME
+    # DB_SERVER = '127.0.0.1'
 
 class TestingConfig(Config):
     TESTING = True
