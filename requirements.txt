@@ -1,3 +1,0 @@
-flask
-autoenv==1.0.0
-waitress
